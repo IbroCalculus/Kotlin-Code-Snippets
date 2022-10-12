@@ -1,0 +1,33 @@
+
+===== For Loop (Looping items) ============
+    val someArrays = arrayOf("Ibrahim", "Musa", "Suleiman")
+    for(i in someArrays){
+        println("The value of this iteration is: $i")
+    }
+
+===== For Loop (Looping range) ============
+
+
+    //for(x in 1..10)
+    //for(x in 1..10 step 2)
+    //for(x in 1 until 10 step 2)
+    //for(x in 1.rangeTo(10) step 2)
+    //for(x in 10.downTo(0).step(2))
+    //for(x in 10 downTo 0 step 2)
+
+    for(x in 1.rangeTo(10)){
+        println("The value is: $x")
+    }
+
+======= For Each loop =================
+
+    val someArrays = arrayOf("Ibrahim", "Musa", "Suleiman")
+    someArrays.forEach { i ->
+        println(i)
+    }
+
+========= For Loop using index ===========
+
+    someArrays.forEachIndexed { index, i ->
+        println("The element $i is of index $index")
+    }

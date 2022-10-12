@@ -1,0 +1,71 @@
+
+THERE ARE 2 TYPES OF LIST; Mutable and Immutable.
+listOf( is immutable), mutableListOf( is mutable (Similar to ArrayList in Java))
+
+    val someLists = listOf("Ibrahim", "Musa", "Suleiman")
+    val someLists : List<String> = listOf("Ibrahim", "Musa", "Suleiman")
+
+    val someList2 = someLists.toMutatbleList()  //Convert immutable to mutable list
+
+    val someLists = mutableListOf("Ibrahim", "Musa", "Suleiman")
+    val someLists: MutableList<String> = mutableListOf("Ibrahim", "Musa", "Suleiman")
+
+    println(someLists[2])
+    println(someLists.get(1))
+    println(someLists.size)           // -------------------- Size of the list --------------
+
+=========== ADD ELEMENTS TO A LIST(mutableList only) ==========
+    someLists.add("Orange")
+
+    val someLists3 = arrayOf("John","Doe")
+    someLists.addAll(someLists3)
+
+=========== REMOVE ELEMENTS FROM A LIST(mutableList only) ==========
+    someLists.removeAt(1)  //remove at index
+
+    val list1 = mutableListOf(1,2,3,4,5,6,7,8,9,10)
+    val list2 = mutableListOf(3,5)
+
+    println("List 1: $list1")
+
+    list1.removeAll(list2)
+    list1.removeAll(list1) //This will empty the list
+    println("List 1 modified 1: $list1")
+
+    list1.removeAll(listOf(1,9))
+    println("List 1 modified 2: $list1")
+
+=========== LAST ELEMENT OF A LIST ============
+   println(someList.last())
+
+=========== LOOPING THROUGH A LIST (Similar to that of Array) ===============
+
+--------- For Loop ---------
+    val someArrays = arrayOf("Ibrahim", "Musa", "Suleiman")
+    for(i in someArrays){
+        println("The value of this iteration is: $i")
+    }
+
+--------- For Each loop ---------
+
+    val someArrays = arrayOf("Ibrahim", "Musa", "Suleiman")
+    someArrays.forEach { i ->
+        println(i)
+    }
+
+--------- For Loop using index ---------
+
+    someArrays.forEachIndexed { index, i ->
+        println("The element $i is of index $index")
+    }
+
+=============== MAP COLLECTION TYPE ====================
+THERE ARE 2 TYPES OF MAP, mapOf( which is immutable, and mutableMapOf( which is mutable
+
+    var mapValues = mapOf(1 to "a", 2 to "b", 3 to "c", 4 to "d", 5 to "e", 6 to "f")
+    mapValues.forEach { key, value ->  println("KEY $key, VALUE $value") }
+
+    var mapValues2 = mutableMapOf(1 to "a", 2 to "b", 3 to "c", 4 to "d", 5 to "e", 6 to "f")
+    mapValues2.put(7,"g")
+    mapValues2[8] = "h"
+    mapValues2.forEach { key, value ->  println("KEY $key, VALUE $value") }

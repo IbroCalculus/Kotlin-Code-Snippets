@@ -1,0 +1,14 @@
+Lambda expression is a function that has no name
+
+
+    fun adder(a: Int, b: Int): Int {
+        return a + b
+    }
+
+//    val adder2: (Int, Int, Int) -> Int = {a:Int, b:Int, c:Int -> a+b+c}
+    val adder2 = {a:Int, b:Int, c:Int -> a+b+c}
+    val greet = {name:String -> println("You are welcome $name")}
+
+    println(adder(2,3))
+    println(adder2(2,3,14))
+    greet("James Gosling")

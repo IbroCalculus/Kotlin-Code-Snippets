@@ -1,0 +1,10 @@
+
+To check the type of data. ie String, int, double etc
+
+    val a = "Ibrahim"
+    val b = 34
+    val c = 56.43
+
+    println(a::class)
+    println(b::class)
+    println(c::class)

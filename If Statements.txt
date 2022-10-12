@@ -1,0 +1,22 @@
+
+    var  x = 34567
+
+    if(x <= 0)
+    {
+        print("It is less than or equal 0")
+    }else if(x >10 && <20){
+	print("It is between 10 and 20")
+    }
+    else{
+        print("It is not less than or equla 0")
+    }
+
+-------------------------- --------------------
+    var x = 50
+    if(x == 20) println("x equals 20") else println("x is not equal 20")
+
+-------------------- ----------------
+    var fName = "Ibrahim"
+    var response = if(fName == "Ibrahim") "Ibrahim" else "Not Ibrahim"
+    println(response)
+

@@ -1,0 +1,6 @@
+    
+    var x: Int = 0
+    do {
+        println("The value is: $x")
+        x++
+    }while (x<10)

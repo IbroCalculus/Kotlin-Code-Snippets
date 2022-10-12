@@ -1,0 +1,6 @@
+
+    var n1 = 45.234566654
+    println("The value of n1 is ${n1}")
+
+    var n2 = String.format("%.2f", n1)
+    println("The value of n2 is ${n2}")   // OUTPUT : 45.23

@@ -1,0 +1,52 @@
+CHECK ALSO; Lists and Arraylist
+
+========== CREATING AN ARRAY ======
+    //val someArrays: IntArrays = intArrayOf(12,35,67,98)
+    val someArrays = arrayOf("Ibrahim", "Musa", "Suleiman")
+    println(someArrays.contentToString())   //Displays contents of the array as string
+    
+
+======== LENGTH OF AN ARRAY ==============
+    println(someArrays.size)
+
+========= ELEMENT ON AN ARRAY USING INDEX ====================
+    println(someArrays[1])
+    println(someArrays.get(0))
+
+======== CHANGE AN ARRAY ELEMENT =============
+    cars[0] = "Opel"
+
+
+======= CHECK IF AN ELEMENT EXISTS WITHIN AN ARRAY =====
+  val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
+  if ("Volvo" in cars) {
+    println("It exists!")
+  } else {
+    println("It does not exist.")
+  }
+
+
+========= LOOPING THROUGH AN ARRAY ==========================
+
+------- For Loop ----------
+    val someArrays = arrayOf("Ibrahim", "Musa", "Suleiman")
+    for(i in someArrays){
+        println("The value of this iteration is: $i")
+    }
+
+    for(index in someArrays.indices){
+        println("Element ${someArrays.get(index)} is at index $index")
+
+---------- For Each loop ----------
+
+    val someArrays = arrayOf("Ibrahim", "Musa", "Suleiman")
+    someArrays.forEach { i ->
+        println(i)
+    }
+
+---------- For Loop using index ----------
+
+    someArrays.forEachIndexed { index, i ->
+        println("The element $i is of index $index")
+    }
+

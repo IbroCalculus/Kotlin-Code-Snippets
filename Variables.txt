@@ -1,0 +1,70 @@
+ 
+ var sName: String
+ sName = "Suleiman"
+ lateinit var userName: String
+
+
+NB: Types in kotlin are non-null by default. ie var sName: String = null; error. Else; 
+                                                var sName: String? = null; OR 
+                                                var sName: String
+
+
+Either var or val. val value cannot be re-assigned, where as var can.
+
+    var fName = "Ibrahim";
+    var sName = "Suleiman";
+    println("You are welcome Mr " +fName + " " + sName);
+    println("You are welcome Mr $fName $sName");
+
+    var a = 56;
+    var b = 75;
+    print("The sum of $a and $b is: ${a+b}")
+
+
+NB: To declare an empty variable;
+NB: Types in Kotlin are non-Null by default. ie
+	val z: String = null		-> Error
+
+	val z: String? = "test"		-> Correct
+	z = null
+
+	var firstNumber: Int? = null
+	firstNumber = 25
+
+E.g
+var firstName: String? = null;
+var firstNumber: Int? = null;
+var firstDouble: Double? = null;
+var firstFloat: Float? = null;
+
+fun main(args: Array<String>) {
+    
+    firstName = "Ibrahim";
+    firstNumber = 4567
+    firstDouble = 487.2345676543
+    firstFloat = 12.34f
+
+}
+
+
+
+
+There are 2 types of variables;
+
+1. Mutable variables, which can have their values re-assigned; defined using var keyword
+	var fname: String = "Ibrahim"
+ OR 	var fname = "Ibrahim"		//THE data type indicator, ie String is not compulsory
+
+2. Local read-only variable, (constant)
+    val fname: String = "Ibrahim"
+
+    println("You are welcome " + fname)
+    print("You are welcome $fname")
+
+
+VARIABLES can be declared outside of the main function, these are called top-level variables
+
+VARIABLE TYPES:
+	var fname: String = "Ibrahim"
+	var fNum: Int = 34;
+

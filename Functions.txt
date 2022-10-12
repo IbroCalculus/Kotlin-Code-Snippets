@@ -1,0 +1,145 @@
+
+CHECK ALSO; Lambda expression
+
+The functions are defined outside fun main(... 
+Function overloading is also possible
+
+
+========== Main Function ==============
+fun main(args: Array<String>){
+	args: Array<String> is Optional
+
+}
+
+======== CREATING A SIMPLE FUNCTION =======
+    fun myFunction(){
+        println("This is a test function")
+    }
+    myFunction()
+
+================= RERTURNING VALUES IN FUNCTIONS; 2 ways ====================
+
+fun greet(): String {
+    var x = "This is just a test function"
+    return x
+}
+
+fun adder(a:Int, b:Int): Int{
+    return a + b
+}
+
+------------ Another way of returning functions -------
+
+    fun greet() = "Welcome aboard Mr Ibrahim"
+    print(greet())
+
+    fun greet(): String = "Good day everyone"
+    println(greet())
+
+    fun myFunction( a:Int, b:Int) =  a + b
+    var x = myFunction(4,5)
+
+--Return nothing (use Unit. This Unit can be omitted, hence fun addition(){})....--
+fun addition(): Unit {
+    var x = 56;
+    var y = 76
+    var z = x + y
+    println(z)
+}
+
+
+fun addition(): Int {
+    var x = 56;
+    var y = 76
+    var z = x + y
+    return z
+}
+
+========= FUNCTION WITHOUT PARAMETER ============
+
+fun greet(){
+    println("You are Welcome")
+    print("Mr or Mrs anybody")
+}
+
+greet()		<- Call the function in main
+
+
+========= FUNCTION WITH PARAMETERS ====================
+
+----
+fun hello(person:String) {
+    println("Hello $person")
+}
+
+   hello("Ibrahim")
+ //hello(person="Ibrahim")
+
+----
+fun calculate(x:Int, y:Int): Int {
+    var answer = x*y
+    return answer
+}
+
+  calculate(2,3)
+//calculate(x=2, y=3)
+
+----- Default parameter --------
+
+fun doSomehthing(x: String ="Something Default"){
+    print("Good day Mr $x")
+
+
+========== FUNCTIONS WITH NAMED ARGUMENTS ===================
+
+fun doSomehthing(x: String ="first Name", y: String = "surName"){
+    print("Good day Mr $x $y")
+}
+    doSomehthing(y="Suleiman", x="Ibrahim")
+
+
+============== FUNCTIONS WITH VARIABLE ARGUMENTS (pass any number of arguments) =========
+
+------------------------------------------------------
+    fun bio(age:Int, vararg names: String){
+        for(x in names){
+            println(x)
+        }
+    }
+
+    bio(12, "Name1", "Name2", "Name3")
+
+-------------------------------------------------------
+fun summer(vararg numbers: Int){
+    var summation = 0;
+    for(i in numbers){
+        summation += i;
+    }
+    print("The sum of all the numbers = $summation")
+}
+    summer(4,5,6,7,8,9)
+
+
+================ METHOD OVERLOADING ==============
+
+fun helloUser(fName:String){
+    println("You are welcome $fName")
+}
+
+fun helloUser(fName: String, age:Int){
+    println("you name is $fName, and your age is $age")
+}
+
+    helloUser("Ibrahim")
+    helloUser("Ibrahim", 45)
+
+========== TYPE CHECKS & AUTOMATIC CASTS ===============
+
+fun doSomehthing(x: Any){
+    println("Good day Mr $x")
+}
+
+    doSomehthing(x="Ibrahim")
+    doSomehthing(x=45)
+    doSomehthing(x=56.65f)
+

@@ -1,0 +1,2 @@
+
+It is equivalent to When Statement in Kotlin. Check When Statement

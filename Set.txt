@@ -1,0 +1,16 @@
+A set is a collection type that eliminates duplication, and it is unordered.
+They can be mutable or immutable.
+
+
+    val sampleSet = mutableSetOf(1,2,3,1,2,3,1,4)
+    println("The set contains the elements $sampleSet, of size ${sampleSet.size}")
+
+
+============ Sort elements of a set ==============
+    println(sampleSet.toSortedSet())
+
+========== Add elements to a set (mutable set) ===========
+    sampleSet.add(45)
+
+========== Access elements in a set ===============
+    print(sampleSet.elementAt(2))

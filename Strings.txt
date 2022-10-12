@@ -1,0 +1,48 @@
+
+CHECK ALSO, String formatting
+
+REMEMBER: var fName is re-assignable, while val fName cannot be re-assigned
+
+
+var x = 45
+var y = 2
+    print("The product of $x and $y is equal ${x*y}")
+
+var fName = "Ibrahim"
+var sName: String = "Suleiman"		//NB: The 'String' is not compulsory
+
+println("You are welcome Mr $fName $sName")
+println(fName.uppercase())
+
+
+------------ Multi-line String --------------
+
+    var statement = """
+        Hello,
+        My name is Ibrahim,
+        How are you today?
+    """.trimIndent()     //Without this, the string will be indented
+    """.replaceIndent("*** ")  //Replace the above with this to fill the indent space. *** is replaceable
+
+    println(statement)
+
+    val myStory: String = """
+        >>>> This is a sample text
+        >>>> I want those >>>> trimmed
+        >>>> from the text >>>>
+    """.trimMargin(">>>>")
+
+    print(myStory)        ----> prints the multiline text while trimming >>>> at the prefix, not within the text
+
+-------------- Accesing a String ---------------
+     var txt = "Hello World"
+     println(txt[0])
+
+
+------------ String methods and properties ----------------
+Assuming fName = "Ibrahim"
+
+fName.isEmpty()             ---- Boolean true or false
+fName.length                ---- Length of string
+fName.equals("ibRAHim", ignoreCase = true)
+

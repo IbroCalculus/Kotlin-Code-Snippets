@@ -1,0 +1,17 @@
+
+INPUTS ARE BY DEFAULT STRINGS. You may convert from String to e.g Int using; ..readline()!!.toInt()
+
+    println("What is your name?:")
+    var input = readLine();
+    print("You are welcome Mr $input, It is nice to have you amongst us.")
+
+readLine!! -> The input cannot be null
+
+    println("Enter 2 numbers to find their products: ")
+    print("Enter first number: ")
+    var x = readLine()!!.toInt();
+    print("Enter second number: ")
+    var y = readLine()!!.toInt();
+    var answer = x * y
+    print("The product of $x and $y is equal $answer")
+    print("The product of $x and $y is equal ${x*y}")

@@ -1,0 +1,84 @@
+
+SIMILAR TO A SWITCH STATEMENT
+
+==================== Int =============
+CHECK "OR" no. 2 below
+
+    var  x = 34567
+
+    when(x)
+    {
+        0 -> println("The value is 0")
+        in 1..10 -> println("The value is between 1 and 10")
+        !in 1..10 -> println("The value is NOT between 1 and 10")
+        in 10 downTo 1 -> println("The value is between 10 and 1")
+        100, 150, 200 -> println("The value is either 100, 150 or 200")
+        45 -> println("The value is 45")
+        90 -> {
+             print("The value is")
+             print("90")
+        }
+        34567 -> println("The value is 34567")
+        else -> println("No value like that is found")
+    }
+
+    
+    var x : Any = 13.37
+
+    when(x){
+         is Int -> print("Value of x is an integer")
+         is Double -> print("Value of x is a double")
+         is String -> print("Value of x is a string")
+         else -> print("Value of x is non of the above")
+}
+
+    ------------   OR    -------------
+
+   var  x = 34567
+
+   val result = when(x)
+    {
+        0 -> "The value is 0"
+        in 1..10 -> "The value is between 1 and 10"
+        45 -> "The value is 45"
+        34567 -> "The value is 34567"
+        else -> "No value like that is found"
+    }
+   println(result)
+
+    ------------   OR    -------------
+    when{
+       x<10 -> " x is less than 10 "
+       x>10 -> {
+               "x is greater than 10"
+               "x is much greater than 10"
+               }
+        }
+       x in 15..20 -> {
+               x is between 15 and 20
+               x is an integer
+                      }
+        }
+
+
+==================== Strings =============
+
+    var sName = "Suleiman"
+
+    when(sName)
+    {
+        "Ibrahim" -> println("sName is Ibrahim")
+        "Musa" -> println("sName is Musa")
+        "Suleiman" -> println("sName is Suleiman")
+        else -> println("No value like that is found")
+    }
+
+
+=========================	==================
+    var response = when(fName)
+    {
+        "Musa" -> "fName is Musa"
+        "Ibrahim" -> "fName is Ibrahim"
+        else -> "Match not found"
+    }
+    println(response)

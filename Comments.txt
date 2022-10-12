@@ -1,0 +1,2 @@
+Same as in JAVA
+i.e // and /* */

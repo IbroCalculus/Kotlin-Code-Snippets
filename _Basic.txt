@@ -1,0 +1,14 @@
+
+Start New Project: Kotlin -> Console Application --- (Buid System - Intelij)  -> ... Others default
+
+Expand "ProjectName" -> Source -> Main -> Kotlin -> main.kt
+
+
+NB: args: Array<String> is optional
+
+fun main(args: Array<String>) {
+    println("Hello World!")
+}
+
+
+NB: ; is optional

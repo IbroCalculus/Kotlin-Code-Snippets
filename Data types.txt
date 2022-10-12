@@ -1,0 +1,40 @@
+
+ - Byte
+ - Short
+ - Int
+ - Long
+ - Float.    val myFloat : Float = 32.00F
+ - Long      val bigLong : Long = 1_000_000      Same as ...Long = 1000000
+ - Char
+
+var x = 'A'
+var x : Char = 'A'
+
+======= To check the type of data. ie String, int, double etc =======
+
+    val a = "Ibrahim"
+    val b = 34
+    val c = 56.43
+
+    println(a::class)
+    println(b::class)
+    println(c::class)
+
+
+====== Data type conversion =============
+
+    val a : Float = 34.5564F
+    print(a.toInt())
+
+    val b = "234567654"
+    println(b.toInt())
+
+-----------------------
+
+    var x = 345
+    println(x)
+    x += 10
+
+    x.plus(10)
+
+    x.minus(10)

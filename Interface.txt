@@ -1,0 +1,37 @@
+
+Interfaces provide predefined structure for a class, so other classes or libraries can deal with our class properly.
+
+----------------------------------------
+interface SpeedController {
+
+    fun accelerate()
+    fun decelerate()
+
+    fun getBrandId(): String{
+        return "ADS3452"
+    }
+}
+
+
+------------- IN MAIN CLASS ---------
+
+class Car : SpeedController {
+    override fun accelerate() {
+        TODO("Not yet implemented")
+    }
+
+    override fun decelerate() {
+        TODO("Not yet implemented")
+    }
+}
+
+----------------- INHERITANCE + INTERFACE --------
+class Car : Car(), SpeedController {
+    override fun accelerate() {
+        TODO("Not yet implemented")
+    }
+
+    override fun decelerate() {
+        TODO("Not yet implemented")
+    }
+}

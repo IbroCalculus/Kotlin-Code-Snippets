@@ -1,0 +1,31 @@
+
+fun main(args: Array<String>) {
+
+    var fName : String = "Ibrahim"
+    fName = "Musa"
+//  fName = null  -> Compilation error, cannot assign null value
+
+    var sName : String? = "Suleiman"
+    print(sName!!.uppercase())
+    sName = "Ibrahim"
+    sName = null
+    println("The value of sName is: $sName")  // OUTPUT: ...is: null
+
+    var len1 = fName.length
+    var len2 = sName?.length   // It is always null
+
+    println("The length of fName is $len1")
+    println("The lenght of sName is $len2")
+
+ 
+======== GETTING LENGTH OF A Non-null nullable value =======
+  var username : String? = "userName1";
+  username?.let{print(it.length)}   // prints the length, ie 9
+
+======== ELVIS OPERATOR ==============
+    var nullV : String? = null
+    var varA = nullV ?: "secondVal";
+    print("The value of varA is: $varA")  //If value of 'nullV' is null,value of varA = secondVal, else, nullV
+
+
+    }

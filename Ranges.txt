@@ -1,0 +1,4 @@
+
+    var testRange = 1.rangeTo(10)     //Range 1 to 10 inclusive
+    var testRange2 = 8.downTo(2)      //Range 8 to 2 inclusive
+    var testRange3 = 1..10            //Similar to testRange

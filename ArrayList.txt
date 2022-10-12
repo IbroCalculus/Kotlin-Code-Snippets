@@ -1,0 +1,30 @@
+
+Arraylists are used to create dynamic arrays. The size of an arraylist can be modified according to requirements.
+
+========== CREATING AND ADDING ELEMENTS TO AN ARRAYLIST ============
+
+    val sampleData = ArrayList<String>()   //Creating an emptpy arralist
+    val sampleData2 = ArrayList<Int>(2)    // Initializing size of arraylist. It is not static
+
+
+
+    sampleData.add("One")
+    sampleData.add("Two")
+
+    
+    val sampleList = listOf("Ten", "Six")
+
+    sampleData.addAll(sampleList)
+
+
+
+
+========= ACCESSING ELEMENTS IN AN ARRAYLIST ==========
+    println(sampleData[1])
+    println(sampleData.get(0))
+
+========== LOOPING THROUG AN ARRAYLIST =======
+
+    for(listItem in sampleList){
+        println(listItem)
+    }

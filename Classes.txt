@@ -1,0 +1,138 @@
+
+NB: Functions inside a cl ass are known as member functions or methods
+
+======== DECLARING A CLASS ==============
+
+class Student{
+    var fName = "Ibrahim"
+    var sName = "Suleiman"
+
+    fun fullName(){
+        println("Your full name is: $fName $sName")
+    }
+
+    fun age(age: Int){
+        println("Your full name is: ${fName + " " + sName} and your age is: $age")
+    }
+}
+
+============ CREATING INSTANCE OF A CLASS ===============
+
+fun main(args: Array<String>) {
+
+    var student1 = Student()
+    println("DETAILS: \nFirstName: ${student1.fName}, \nSurname: ${student1.sName}")
+    student1.fullName()
+
+    student1.fName = "Majeed"
+    println("DETAILS: \nFirstName: ${student1.fName}, \nSurname: ${student1.sName}")
+    student1.age(78)
+
+}
+
+
+=================== CONSTRUCTOR =========================
+NB: Constructor overloading is also supported
+NB: The constructor keyword can be omitted
+NB: Check on the initialization block below in other to execute a code immdiately a class's object is initialized
+
+
+//class TestClass2 constructor(var fName: String = "Ibrahim", var sName: String = "Musa") {
+class TestClass2 constructor(var fName: String, var sName: String) { //This first one is the primary constructor
+
+    //this.fName = fName
+    //var age = 35
+    //email : String = "sample@email.com"
+    init {
+        this.sName = sName
+        var age: Int = 25
+        var email: String
+        print("Welcome $fName $sName, age $age")
+    }
+
+    fun sayHello(){
+        print()}
+   }
+
+var testclass2 = TestClass2("Ibrahim", "Suleiman")
+
+
+
+---------- CONSTRUCTOR OVERLOADING --------------
+NB: You may use an initialization block in the main/primary constructor to execute a code once the class's object is initialized.
+    But in secondary constructors, you don't need the init block.
+
+class TestClass(fName: String, sName: String){
+    init {
+        println("DETAILS: \nFirstName: $fName, \nSurname: $sName")
+    }
+
+    constructor(fName: String, sName: String, age: Int): this(fName, sName){
+        println("DETAILS: \nFirstName: $fName, \nSurname: $sName, \nAge: $age")
+    }
+    constructor(fName: String): this(fName, sName = ""){
+        println("DETAILS: \nFirstName: $fName")
+    }
+
+    var t1 = TestClass("Ibrahim", "Suleman")
+    var t2 = TestClass("Ibrahim", "Suleiman", 89)
+    var t3 = TestClass("Ibrahim")
+
+
+============ INITIALIZER BLOCK =====================
+- Initializer block is called after the primary constructor is invoked.
+- There can be more than one init blocks, which will run sequentially.
+- All init will execute before the contents of the constructor
+
+class TestClass2 (var fName: String, var sName: String) {
+    init {
+        println("You just created a class and this is its initialization")
+        println("Welcome Mr $fName $sName, This is a constructor + initialization")
+    }
+
+-- They can be multiple initializer blocks, which will all be called sequentially, from top first to bottom last
+
+
+=============== ADDING A PREFIX TO A CLASS VARIABLE ===========
+class User(var firstName: String, var lastName: String) {
+
+    var fullName: String = "$firstName + $lastName"
+        get() = "Your full name is: $field"
+    
+    var firstName1 = "$firstName"
+        get() = "Your first name is: $field"
+}
+
+    var user = User("Ibrahim", "Suleiman")
+    println(user.fullName)                    //OUTPUT: Your full name is: Ibrahim + Suleiman
+    println(user.firstName1)                  //OUTPUT: Your first name is: Ibrahim
+
+
+========== GETTERS AND SETTERS ==================
+
+
+
+============ INHERITANCE ===============
+Use the 'open' keyword in front of the superclass/parent, to make this the class other classes should inherit properties and functions from.
+To inherit from a class, specify the name of the subclass, followed by a colon :, and then the name of the superclass
+
+NB: No need to include the 'open' keyword, IDE will suggest when to override
+
+AdminStaff inherits from Staff
+
+open class Staff {
+    var firstName = "Ibrahim"
+    var surName = "Suleiman"
+
+    open fun details(){
+        println("FULLNAME: $firstName $surName\n")
+    }
+}
+
+class AdminStaff: Staff() {
+    var position = "Level 12 Officer"
+
+    override fun details(){
+        println("ADMIN DETAILS: FullName: $firstName $surName,  Position: $position\n")
+    }
+

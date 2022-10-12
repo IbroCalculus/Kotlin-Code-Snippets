@@ -1,0 +1,29 @@
+
+THERE ARE 2 TYPES OF MAP, mapOf( which is immutable), and mutableMapOf( which is mutable)
+
+
+    //var mapValues: Map<Int, String> = mapOf(1 to "a", 2 to "b", 3 to "c", 4 to "d", 5 to "e", 6 to "f")
+    //var mapValues: Map<Int, String> = mapOf<Int, String>(1 to "a", 2 to "b", 3 to "c", 4 to "d", 5 to "e", 6 to "f")
+    var mapValues = mapOf(1 to "a", 2 to "b", 3 to "c", 4 to "d", 5 to "e", 6 to "f")
+    mapValues.forEach { key, value ->  println("KEY $key, VALUE $value") }
+
+============== Accessing elements in a map ===============
+    print(mapValues.get(2))  // where 2 is the key
+    print(mapValues[3])
+
+    println(sampleMap.keys) 
+    println(sampleMap.values)
+    println(sampleMap.entries)
+
+============= Mutable list ==============
+    var mapValues2 = mutableMapOf(1 to "a", 2 to "b", 3 to "c", 4 to "d", 5 to "e", 6 to "f")
+    mapValues2.put(7,"g")
+    mapValues2[8] = "h"
+
+=========  Loopin through a map ==========
+    mapValues2.forEach { key, value ->  println("KEY $key, VALUE $value") }
+
+    for(key in sampleMap.keys){
+        println("The value of $key is ${sampleMap[key]}")
+    }
+
