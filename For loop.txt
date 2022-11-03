@@ -25,6 +25,8 @@
     someArrays.forEach { i ->
         println(i)
     }
+    
+    someArrays.forEach {println(i)}   //Prints Each of the item in the array
 
 ========= For Loop using index ===========
 

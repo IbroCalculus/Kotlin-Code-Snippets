@@ -20,11 +20,12 @@ fun main(args: Array<String>) {
  
 ======== GETTING LENGTH OF A Non-null nullable value =======
   var username : String? = "userName1";
+  print($fName?.length})
   username?.let{print(it.length)}   // prints the length, ie 9
 
 ======== ELVIS OPERATOR ==============
     var nullV : String? = null
-    var varA = nullV ?: "secondVal";
+    var varA = nullV  ?: "secondVal";
     print("The value of varA is: $varA")  //If value of 'nullV' is null,value of varA = secondVal, else, nullV
 
 

@@ -1,0 +1,69 @@
+Enum classes are used when you want to represent a fixed set of values.
+Use enums when you want to create some constants. More powerful. Can have properties and functions.
+
+
+
+----  Without a constructor ----
+
+enum class Direction{
+    NORTH,
+    EAST,
+    WEST,
+    SOUTH
+}
+
+    println(Direction.SOUTH)  //OUTPUTS: SOUTH
+
+
+
+--- Passing constructor to an enum class ---
+
+enum class Direction(var direction: String, var distance: Int){
+    NORTH("North", 456),
+    EAST("East", 567),
+    WEST("West", 435),
+    SOUTH("South", 412)
+}
+
+
+--- Looping through an enum class ----
+
+    for(direction in Direction.values()){
+        println(direction)
+    }
+
+    //OUTPUT: NORTH, EAST, WEST, SOUTH   (With or without constructor)
+
+
+--- Access arguments passed into the constructors ---
+
+    println(Direction.SOUTH.distance)
+    println(Direction.SOUTH.name)     // name is built-in keyword, returns SOUTH
+
+
+--- Defining a function in an enum class ---
+
+enum class Direction(var direction: String, var distance: Int){
+    NORTH("North", 456),
+    EAST("East", 567),
+    WEST("West", 435),
+    SOUTH("South", 412);
+
+    fun showData(){
+        println("Direction: $direction, Distance: $distance")
+    }
+}
+
+    Direction.SOUTH.showData()  //OUTPUT: Direction: South, Distance: 412
+
+
+---- Using when statement with enum class ----
+
+    //val x = Direction.EAST
+    val x = Direction.valueOf("NORTH")
+    when (x) {
+        Direction.NORTH -> println("The direction is North")
+        Direction.EAST -> println("The direction is East")
+        Direction.WEST -> println("The direction is West")
+        Direction.SOUTH -> println("The direction is South")
+    }

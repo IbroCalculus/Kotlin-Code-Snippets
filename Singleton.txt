@@ -1,0 +1,48 @@
+It is associated with classes
+
+It is a design pattern in Kotlin in which you want to have only one instance of a particular object, and you want to have that instance available globally throughout the program.
+
+In a simpler term, Singleton is a global object that can be accessed from everywhere in your application.
+
+
+====== CREATING A SINGLETON (ie of a class called Database) ======
+
+There are 2 methods of creating a singleton, ie:
+
+--- Method 1 ----
+NB: The constructor keyword is compulsory when using an access modifier with a class name,
+    Also, the private access modifier is compulsory when creating a singleton.
+
+class Database private constructor(){
+    companion object{
+        private var instance: Database? = null
+
+        fun getInstance(): Database? {
+            if(instance == null){
+                instance = Database()
+            }
+            return instance
+        }
+    }
+}
+
+    //val instance = Database() <- Can't do this, error, rather, as shown below:
+
+    val instance = Database.getInstance()
+
+    println("The value of instance is: $instance")
+    //OUTPUT The value of instance is: Database@7ba4f24f, 
+      where Database@7ba4f24f is the memory location of this particular instance
+
+
+--- Method 2 (Simpler, shorter method) ---
+
+object Database2 {
+    init {
+        println("Database2 created!")
+    }
+}
+
+    println(Database2)  // OUTPUT: Database2@7699a589
+
+

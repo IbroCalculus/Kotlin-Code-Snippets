@@ -1,0 +1,19 @@
+=== SEALED CLASSES ===
+Used in place of enum classes
+
+sealed class Result(val message: String){
+    class Success(message: String): Result(message)
+    class Error(message: String): Result(message)
+}
+
+fun getData(result: Result){
+    when(result){
+        is Result.Success -> println("Result successful")
+        is Result.Error -> println("Result Error")
+    }
+}
+
+    val success = Result.Success("SUCCESS")
+    val error = Result.Error("FAILED")
+
+    getData(success)

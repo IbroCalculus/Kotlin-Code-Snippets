@@ -1,7 +1,11 @@
 CHECK ALSO; Lists and Arraylist
 
+Arrays are used to stored multiple values to a single variable.
+ACCEPTS multiple datatypes
+
 ========== CREATING AN ARRAY ======
-    //val someArrays: IntArrays = intArrayOf(12,35,67,98)
+    // val someArrays: IntArray = intArrayOf(12,35,67,98)
+    // val someArrays: Array<Int> = arrayOf(12,35,67,98)
     val someArrays = arrayOf("Ibrahim", "Musa", "Suleiman")
     println(someArrays.contentToString())   //Displays contents of the array as string
     
@@ -50,3 +54,10 @@ CHECK ALSO; Lists and Arraylist
         println("The element $i is of index $index")
     }
 
+
+--- Passing an array as a parameter in a funcion
+fun arrayvalues(numbers : Array<Int>) {
+    for(number in numbers){
+        print(number)
+    }
+}

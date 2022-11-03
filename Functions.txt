@@ -72,6 +72,13 @@ fun hello(person:String) {
     println("Hello $person")
 }
 
+--- Passing an array as a parameter
+fun arrayvalues(numbers : Array<Int>) {
+    for(number in numbers){
+        print(number)
+    }
+}
+
    hello("Ibrahim")
  //hello(person="Ibrahim")
 
@@ -80,6 +87,9 @@ fun calculate(x:Int, y:Int): Int {
     var answer = x*y
     return answer
 }
+
+fun calculate(x:Int, y:Int): Int = x*y
+fun calculate(x:Int, y:Int) = x*y
 
   calculate(2,3)
 //calculate(x=2, y=3)

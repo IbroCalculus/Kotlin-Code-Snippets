@@ -1,5 +1,9 @@
+CHECK ALSO:
+ Sealed Class
+ Abstract Class
+ Data Class
 
-NB: Functions inside a cl ass are known as member functions or methods
+NB: Functions inside a class are known as member functions or methods
 
 ======== DECLARING A CLASS ==============
 
@@ -33,7 +37,9 @@ fun main(args: Array<String>) {
 
 =================== CONSTRUCTOR =========================
 NB: Constructor overloading is also supported
-NB: The constructor keyword can be omitted
+NB: The constructor keyword can be omitted, unless...
+NB: The constructor keyword is compulsory if an access modifier is used; 
+     ie class TestClass2 private constructor()...
 NB: Check on the initialization block below in other to execute a code immdiately a class's object is initialized
 
 
@@ -109,8 +115,19 @@ class User(var firstName: String, var lastName: String) {
 
 
 ========== GETTERS AND SETTERS ==================
+Getters and setters are auto generated in kotlin.
+In kotlin, they are implicit, meaning we don't have to declare like in java.
 
+ ---- To override getters and setters ---
+class User(var firstName: String, ...
 
+    var firstName = firstName
+        get() {
+            return field
+         }
+        set(value) {
+           field = value
+         }
 
 ============ INHERITANCE ===============
 Use the 'open' keyword in front of the superclass/parent, to make this the class other classes should inherit properties and functions from.
@@ -136,3 +153,65 @@ class AdminStaff: Staff() {
         println("ADMIN DETAILS: FullName: $firstName $surName,  Position: $position\n")
     }
 
+---------- Another reference example ----------------
+
+open class Vehicle(val name: String, val color: String){
+    fun move(){
+        println("$name is moving")
+    }
+
+    fun stop(){
+        println("$name stopped moving")
+    }
+}
+
+class Car(name:String, color: String, val engine: Int, val doors: Int): Vehicle(name, color) {
+}
+
+class Plane(name: String, color: String, val engine: Int, val doors: Int): Vehicle(name, color){
+}
+
+    val car1 = Car("BMW", "RED", 1, 4)
+    val plane1 = Plane("Boeing", "WHITE & BLUE", 4, 4)
+    
+    car1.move()
+
+
+--------- Overriding methods from a parent class -----------
+
+ 1. Use the open keyword before the function in the parent class
+
+open class Vehicle(val name: String, val color: String){
+    open fun move(){
+        println("$name is moving")
+    }
+
+ 2. Within child class, Ctrl + O and override move()
+
+class Car(name:String, color: String, val engine: Int, val doors: Int): Vehicle(name, color) {
+    override fun move() {
+        println("This is it")    // Or call another function instead
+        super.move()  // means call the move function from the base/parent class. May delete if not needed
+    }
+
+======== COMPANION OBJECT (This is equivalent to Static in Java) =======
+This allows the accessing of variables or methods within a class without having to create an instance of that class.
+This is achieved by wrapping the method within a companion object as depicted below
+any method within the companion object belongs to the class itself, hence not associated to an instance
+
+---- E.g: ----
+
+class Calculator(){
+    companion object{
+        var number = 234
+        fun sum(a:Int, b:Int): Int{
+            return a + b
+        }
+    }
+}
+
+ ----- Accessing the sum method ----
+    val x = Calculator.sum(45,7)
+    val num = Calculator.number
+    println(x)
+    println(number)

@@ -45,4 +45,5 @@ Assuming fName = "Ibrahim"
 fName.isEmpty()             ---- Boolean true or false
 fName.length                ---- Length of string
 fName.equals("ibRAHim", ignoreCase = true)
+fName.trim()                ---- Trim negative spaces
 

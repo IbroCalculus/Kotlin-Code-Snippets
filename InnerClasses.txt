@@ -1,0 +1,15 @@
+Innerclasses are classes which are declared inside another class. They are generally used when you know there is a very close relationship between 2 classes.
+
+
+class ListView(val listViewItems : Array<String>){
+    inner class ListViewItem(){
+        fun displayItem(position: Int){
+            println("Item is: " + listViewItems[position])
+        }
+    }
+}
+
+    val listView = ListView(arrayOf("One", "Two","Three", "Four","Five", "Six"))
+    listView1.ListViewItem().displayItem(2)  //OUTP
+
+

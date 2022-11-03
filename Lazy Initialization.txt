@@ -1,0 +1,24 @@
+
+Lazy initialization is used when creating an instance/object is expensive.
+Expensive in this context means that it will take some time.
+
+
+----
+
+class User(var fName: String,  var lName: String, var age: Int){
+    init {
+        println("User $fName created")
+    }
+}
+
+ --- Without lazy initialization ---
+    val user1 = User("Alex", "Dobbin", 23)  // Will output by default, "User Alex created
+
+ --- With lazy initialization ---
+    val user2 by lazy { 
+        User("Khalid", "Hassan", 26)  // will NOT by default output, "User Alex created"
+    }
+
+    println(user2.fName)  // Now will output, first: "User Khalid created", then "Khalid"
+
+    

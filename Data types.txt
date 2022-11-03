@@ -1,7 +1,7 @@
 
  - Byte
  - Short
- - Int
+ - Int     //println(Int.MIN_VALUE)  ie -2147483648
  - Long
  - Float.    val myFloat : Float = 32.00F
  - Long      val bigLong : Long = 1_000_000      Same as ...Long = 1000000
@@ -15,8 +15,9 @@ var x : Char = 'A'
     val a = "Ibrahim"
     val b = 34
     val c = 56.43
-
-    println(a::class)
+     
+    print(a is Int)      // Returns a boolean
+    println(a::class)    // Shows the type of data
     println(b::class)
     println(c::class)
 

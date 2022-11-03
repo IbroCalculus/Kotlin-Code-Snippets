@@ -1,0 +1,5 @@
+
+An abstract class is a class that is declared abstract - It may or may not include abstract methods. Abstract classes cannot be instantiated, but they can be subclassed.
+
+Abstract classes are created only to be inherited by other classes.
+
