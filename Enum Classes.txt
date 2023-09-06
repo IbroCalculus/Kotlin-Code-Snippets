@@ -37,8 +37,9 @@ enum class Direction(var direction: String, var distance: Int){
 
 --- Access arguments passed into the constructors ---
 
-    println(Direction.SOUTH.distance)
-    println(Direction.SOUTH.name)     // name is built-in keyword, returns SOUTH
+    println(Direction.SOUTH.direction)  // South
+    println(Direction.SOUTH.distance)   // 412
+    println(Direction.SOUTH.name)       // name is built-in keyword, returns SOUTH
 
 
 --- Defining a function in an enum class ---
@@ -47,7 +48,7 @@ enum class Direction(var direction: String, var distance: Int){
     NORTH("North", 456),
     EAST("East", 567),
     WEST("West", 435),
-    SOUTH("South", 412);
+    SOUTH("South", 412);    //Note the ;
 
     fun showData(){
         println("Direction: $direction, Distance: $distance")

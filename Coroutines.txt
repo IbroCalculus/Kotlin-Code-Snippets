@@ -1,0 +1,117 @@
+For running background tasks, multiple background threads can be created to handle different background tasks (ie network operations, image loading, database queries, downloading file). But there is a limit to the number of threads that can be created because this can lead to lack of memory, hence the application will crash. The solution is coroutines.
+
+By using coroutines, you can create only one background thread which can include multiple coroutines (thousands) which can run different tasks without any memory problem.
+
+NOTE: SuspendING functions;  These are functions used with coroutines.
+Suspend function is a function that could be started, paused, and resumed. One of the most important points to remember about the suspend functions is that they are only allowed to be called from a coroutine or another suspend function.
+
+
+
+NOTE: While creating a new project, build system must be Gradle. Must have internet
+
+------------- Within build.gradle.kts --------------
+dependencies {
+    testImplementation(kotlin("test"))
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
+}
+
+
+
+============== 1. Using multiple threads instead of coroutines =============
+
+    thread {
+        for(i in 1.rangeTo(10)){
+            println("Thread name: ${Thread.currentThread().name}")
+            Thread.sleep(1000)
+        }
+    }
+
+    thread {
+        for(i in 1.rangeTo(10)){
+            println("Thread name: ${Thread.currentThread().name}")
+            Thread.sleep(1000)
+        }
+    }
+
+    for(i in 1.rangeTo(10)){
+        println("Thread name: ${Thread.currentThread().name}")
+        Thread.sleep(1000)
+    }
+
+NOTE: While using thread, by default the application will wait for the last running thread to finish executing before ending the application.
+      But while using coroutine, by default, it doesn't wait for the last running thread, rather it ends when the first running thread is done executing.
+      This can be explicitly stated as depicted in the code below, especially the runBlocking method
+
+
+
+====================== 2. Using coroutines =======================
+CoroutineScope is usually used to group a bunch of coroutines together.
+
+NOTE: 
+- CoroutineScope(Main) <- This means the coroutinescope is going to work on the main thread, but it is only applicable to an android program
+- CoroutineScope(IO) <- This is used when getting data from the internet, or querying a database.
+- CoroutineScope(Default) <- This means it is going to do some heavy work
+
+
+---------------------------------------
+import kotlinx.coroutines.Dispatchers.Default
+
+	]callCouroutine()
+
+fun callCouroutine() {
+
+    val parentJob = CoroutineScope(Default).launch{
+
+        thread {
+            for(i in 1.rangeTo(5)){
+                println("Thread name: ${Thread.currentThread().name}")
+                Thread.sleep(1000)
+            }
+        }
+
+        thread {
+            for(i in 1.rangeTo(5)){
+                println("Thread name: ${Thread.currentThread().name}")
+                Thread.sleep(1000)
+            }
+        }
+
+        for(i in 1.rangeTo(7)){
+            println("Thread name: ${Thread.currentThread().name}")
+            Thread.sleep(1000)		// delay(2000) cannot be used within this thread because it(delay) is a suspend function.
+        }
+
+        delay(2000)     // Use delay instead of Thread.sleep(2000) when within the coroutine scope. 
+        println("Background task ended successfully!")
+
+    }
+    runBlocking {
+        parentJob.join()
+    }
+}
+
+
+
+=========================== Coroutine builders =========================
+Coroutine builders are functions with which you can create coroutines. They are 3, ie
+- launch
+- async
+- runBlocking
+
+
+-------------------------------------- 1. Launch -----------------------------
+Create the suspend function(s)
+
+private suspend fun getData1(threadName: String): String {
+    println("Fake work1 starts: $threadName")
+    delay(2000)
+    println("Fake work1 finished: $threadName")
+    return "result 1"
+}
+
+private suspend fun getData2(threadName: String): String {
+    println("Fake work2 starts: $threadName")
+    delay(2000)
+    println("Fake work2 finished: $threadName")
+    return "result 2"
+}

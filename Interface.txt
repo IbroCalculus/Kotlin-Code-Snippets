@@ -35,3 +35,36 @@ class Car : Car(), SpeedController {
         TODO("Not yet implemented")
     }
 }
+
+
+======= JUST ANOTHER EXAMPLE =====
+
+interface CanGo{
+    fun go()
+    fun vName(name:String): String
+}
+
+interface CanStop{
+    fun stop()
+}
+
+class Vehicle : CanGo, CanStop{
+    override fun go() {
+        println("The vehicle can go")
+    }
+
+    override fun vName(name: String): String {
+        return "The vehicle name is: $name"
+    }
+
+    override fun stop() {
+        println("The vehicle has stopped moving")
+    }
+}
+
+
+    val vehicle1 = Vehicle()
+    vehicle1.go()
+    val vName = vehicle1.vName("Honda Hala")
+    println(vName)
+    vehicle1.stop()

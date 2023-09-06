@@ -1,0 +1,30 @@
+Object expression is anonymous class.
+
+From the interface, onClickListener, to the class, Button, to the implementation in main.
+
+
+fun main(args: Array<String>) {
+
+    val loginButton = Button("Login", 1122, object : onClickListener{
+        override fun onClick() {
+            println("You clicked the login button")
+        }
+    }
+    )
+    loginButton.onClickListener.onClick()   // OUTPUT: You clicked the login button
+
+    val signupButton = Button("Sign up", 3344, object : onClickListener{
+        override fun onClick() {
+            println("You clicked the signup button")
+        }
+
+    })
+    signupButton.onClickListener.onClick()   // OUTPUT: You clicked the signup button
+
+}
+
+class Button(val text: String, val id: Int, val onClickListener: onClickListener)
+
+interface onClickListener{
+    fun onClick()
+}

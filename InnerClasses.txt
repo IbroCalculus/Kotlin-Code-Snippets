@@ -1,4 +1,5 @@
 Innerclasses are classes which are declared inside another class. They are generally used when you know there is a very close relationship between 2 classes.
+Innerclasses have access to properties of the outer class.
 
 
 class ListView(val listViewItems : Array<String>){
@@ -9,7 +10,7 @@ class ListView(val listViewItems : Array<String>){
     }
 }
 
-    val listView = ListView(arrayOf("One", "Two","Three", "Four","Five", "Six"))
-    listView1.ListViewItem().displayItem(2)  //OUTP
+    val listView1 = ListView(arrayOf("One", "Two","Three", "Four","Five", "Six"))
+    listView1.ListViewItem().displayItem(2)  //OUTPUT: Item is: Three 
 
 

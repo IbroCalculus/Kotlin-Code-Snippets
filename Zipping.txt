@@ -1,0 +1,16 @@
+
+---------- Zipping -------
+
+    val colors = listOf("red", "brown", "grey")
+    val animals = listOf("fox", "bear", "wolf")
+
+    var zippedValues = colors.zip(animals)
+    var zippedValues2 = animals zip colors
+
+    for(i in zippedValues2){
+        println("$i")
+    }
+
+
+
+------------ Unzipping ------------------

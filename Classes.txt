@@ -1,5 +1,6 @@
 CHECK ALSO:
- Sealed Class
+ Companion Object.txt (Kotlin equivalent of Java's static keyword)
+ Sealed Class  // Class that cannot be inherited
  Abstract Class
  Data Class
 
@@ -40,8 +41,10 @@ NB: Constructor overloading is also supported
 NB: The constructor keyword can be omitted, unless...
 NB: The constructor keyword is compulsory if an access modifier is used; 
      ie class TestClass2 private constructor()...
-NB: Check on the initialization block below in other to execute a code immdiately a class's object is initialized
+NB: Check on the initialization block below in order to execute a code immdiately a class's object is initialized
 
+
+---------- Example 1 (Check also example 2 if this still seems confusing) -----------
 
 //class TestClass2 constructor(var fName: String = "Ibrahim", var sName: String = "Musa") {
 class TestClass2 constructor(var fName: String, var sName: String) { //This first one is the primary constructor
@@ -59,31 +62,108 @@ class TestClass2 constructor(var fName: String, var sName: String) { //This firs
     fun sayHello(){
         print()}
    }
-
 var testclass2 = TestClass2("Ibrahim", "Suleiman")
 
+
+---------- Example 2 -----------
+class Multiplier(var a: Int, var b:Int) {
+
+    init {
+        println("Values entered are: $a and $b")
+    }
+
+    fun mult(){
+        println("The product of both numbers is: ${a * b}")
+    }
+
+    fun mult(a: Int, b: Int){
+        println("The product = ${a*b}")
+    }
+}
+
+------------------- OVERRIDING GETTERS AND SETTERS ------------------------------
+Getters and setters are called implicitly, do be override, note that firstName: String does not contain var
+
+class Employee(firstName: String) {
+
+// 1. The default implicit getter and setter
+    var firstName = firstName
+        get() {
+            return  field
+        }
+
+        set(value) {
+            field = value
+        }
+}
+
+    val emp1 = Employee("Ibrahim")
+    println(emp1.firstName)   // output: Ibrahim
+    emp1.firstName = "Musa"   // set firstName = Musa
+    println(emp1.firstName)   // get output; Musa
+
+
+// 2. Overriding the implicit getter and setter
+
+    var firstName = firstName
+        get() {
+            return  " Welcome Mr $field"
+        }
+
+        set(value) {
+            field = "Alhaji $value"
+        }
+
+    val emp1 = Employee("Ibrahim")
+    println(emp1.firstName)   // output: Welcome Mr Ibrahim
+    emp1.firstName = "Musa"   // set firstName = Alhaji Musa
+    println(emp1.firstName)   // get output; Welcome Mr Ahaji Musa
+
+
+
+---------- CONSTRUCTOR WITH DEFAULT VALUE ---------------
+class User(var name:String = "John", var lastName:String = "Doe", var age: Int = 45) { ...
+
+    val friend5 = User()	//OUTPUT: Details: Name: John, Last Name: Doe, age: 45
 
 
 ---------- CONSTRUCTOR OVERLOADING --------------
 NB: You may use an initialization block in the main/primary constructor to execute a code once the class's object is initialized.
     But in secondary constructors, you don't need the init block.
+    The secondary construtor(s) only take in parameters, not variables, unlike the primary which can take either.
 
-class TestClass(fName: String, sName: String){
+
+class User(var name:String, var lastName:String, var age: Int) {
     init {
-        println("DETAILS: \nFirstName: $fName, \nSurname: $sName")
+        println("Details: Name: $name, Last Name: $lastName, age: $age")
     }
 
-    constructor(fName: String, sName: String, age: Int): this(fName, sName){
-        println("DETAILS: \nFirstName: $fName, \nSurname: $sName, \nAge: $age")
-    }
-    constructor(fName: String): this(fName, sName = ""){
-        println("DETAILS: \nFirstName: $fName")
+    //NB: While declaring a secondary constructor, must give default values to unused parameters in the primary constructor within the this()
+    //NB: All secondary constructors call the init block by default when used
+
+    constructor(name: String): this(name, "",0){
+        println("This secondary constructor doesn't require the init block")
     }
 
-    var t1 = TestClass("Ibrahim", "Suleman")
-    var t2 = TestClass("Ibrahim", "Suleiman", 89)
-    var t3 = TestClass("Ibrahim")
+    var id = 0
+    constructor(name:String, lastName:String, age: Int, id: Int): this(name,lastName,age){
+        this.id = id
+    }
 
+    constructor(age: Int): this("","",age){
+
+    }
+
+    constructor(id: Double): this("","",0){
+
+    }
+
+}
+
+    val friend = User("John", "Smith", 30)	// OUTPUT-> Details: Name: John, Last Name: Smith, age: 30
+    val friend2 = User("Alex")			// 	    Details: Name: Alex, Last Name: , age: 0
+    val friend3 = User(45)			//	    Details: Name: , Last Name: , age: 45
+    val friend4 = User(id = 45.6)		//	    Details: Name: , Last Name: , age: 0
 
 ============ INITIALIZER BLOCK =====================
 - Initializer block is called after the primary constructor is invoked.
@@ -129,6 +209,12 @@ class User(var firstName: String, ...
            field = value
          }
 
+==================== Generating toString =====================
+class Employee(var firstName: String, var age: Int){
+    override fun toString(): String {
+        return "Employee(firstName='$firstName', age=$age)"
+    }
+
 ============ INHERITANCE ===============
 Use the 'open' keyword in front of the superclass/parent, to make this the class other classes should inherit properties and functions from.
 To inherit from a class, specify the name of the subclass, followed by a colon :, and then the name of the superclass
@@ -138,7 +224,7 @@ NB: No need to include the 'open' keyword, IDE will suggest when to override
 AdminStaff inherits from Staff
 
 open class Staff {
-    var firstName = "Ibrahim"
+    open var firstName = "Ibrahim"
     var surName = "Suleiman"
 
     open fun details(){
@@ -148,10 +234,12 @@ open class Staff {
 
 class AdminStaff: Staff() {
     var position = "Level 12 Officer"
+    override var firstName = "Ibro"
 
     override fun details(){
         println("ADMIN DETAILS: FullName: $firstName $surName,  Position: $position\n")
     }
+}
 
 ---------- Another reference example ----------------
 

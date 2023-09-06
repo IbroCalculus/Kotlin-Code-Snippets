@@ -1,8 +1,10 @@
+CHECK ALSO Zipping.txt to zip lists together.
 
 THERE ARE 2 TYPES OF LIST; Mutable and Immutable.
 listOf( is immutable), mutableListOf( is mutable (Similar to ArrayList in Java))
 
     val someLists = listOf("Ibrahim", "Musa", "Suleiman")
+    val someLists = listOf<String>("Ibrahim", "Musa", "Suleiman")
     val someLists : List<String> = listOf("Ibrahim", "Musa", "Suleiman")
 
     val someList2 = someLists.toMutatbleList()  //Convert immutable to mutable list
@@ -21,7 +23,8 @@ listOf( is immutable), mutableListOf( is mutable (Similar to ArrayList in Java))
     someLists.addAll(someLists3)
 
 =========== REMOVE ELEMENTS FROM A LIST(mutableList only) ==========
-    someLists.removeAt(1)  //remove at index
+    someLists.removeAt(1)  	//remove at index
+    someLists.remove("Orange)   //remove by element
 
     val list1 = mutableListOf(1,2,3,4,5,6,7,8,9,10)
     val list2 = mutableListOf(3,5)

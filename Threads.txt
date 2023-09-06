@@ -1,0 +1,23 @@
+CHECK ALSO: Coroutines.txt
+
+=========== Creating threads =============
+    thread {
+        for (i in 1.rangeTo(5)){
+            println("New Thread $i")
+            Thread.sleep(1000)
+        }
+    }
+
+
+    thread {
+        for (i in 1.rangeTo(10)){
+            println("Second Thread $i")
+            Thread.sleep(500)
+        }
+    }
+
+
+
+============= Current Thread Name ==========
+
+    println("Current Thread: ${Thread.currentThread().name}")

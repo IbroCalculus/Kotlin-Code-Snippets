@@ -1,0 +1,15 @@
+
+    var fullname = StringBuilder()
+
+    print("Enter your firstname: ")
+    var fName = readln()
+    print("Enter your surname: ")
+    var sName = readln()
+    print("Enter your age: ")
+    var age = readln()
+
+    fullname.append("$fName ")
+    fullname.append("$sName ")
+    fullname.append("$age")
+
+    println("Your captured details are: $fullname")

@@ -3,3 +3,42 @@ An abstract class is a class that is declared abstract - It may or may not inclu
 
 Abstract classes are created only to be inherited by other classes.
 
+
+abstract class Vehicle{
+    abstract fun sayHello()
+    abstract fun noOfWheels(number : Int): Int
+}
+
+
+class Car : Vehicle() {
+    override fun sayHello() {
+        println("Car says hello")
+    }
+    override fun noOfWheels(number: Int): Int {
+        return number
+    }
+}
+
+class Motorcycle: Vehicle(){
+    override fun sayHello() {
+        println("Motorcycle says hello")
+    }
+    override fun noOfWheels(number: Int): Int {
+        return number
+    }
+}
+
+==== IN MAIN ===
+
+    val car1 = Car()
+    car1.sayHello()
+    val cnw = car1.noOfWheels(4)
+    println("Car number of wheels are: $cnw")
+
+    val motorcycle1 = Motorcycle()
+    motorcycle1.sayHello()
+    val mnw = motorcycle1.noOfWheels(2)
+    println("Motorcycle's number of wheels are: $mnw")
+
+
+

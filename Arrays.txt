@@ -6,11 +6,11 @@ ACCEPTS multiple datatypes
 ========== CREATING AN ARRAY ======
     // val someArrays: IntArray = intArrayOf(12,35,67,98)
     // val someArrays: Array<Int> = arrayOf(12,35,67,98)
-    val someArrays = arrayOf("Ibrahim", "Musa", "Suleiman")
+    val someArrays = arrayOf("Ibrahim", "Musa", "Suleiman")  //Simply use this
     println(someArrays.contentToString())   //Displays contents of the array as string
     
 
-======== LENGTH OF AN ARRAY ==============
+======== LENGTH/SIZE OF AN ARRAY ==============
     println(someArrays.size)
 
 ========= ELEMENT ON AN ARRAY USING INDEX ====================

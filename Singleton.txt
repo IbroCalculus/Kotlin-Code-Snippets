@@ -1,8 +1,10 @@
 It is associated with classes
 
 It is a design pattern in Kotlin in which you want to have only one instance of a particular object, and you want to have that instance available globally throughout the program.
-
 In a simpler term, Singleton is a global object that can be accessed from everywhere in your application.
+
+Reason why we may need only one instance of a class: eg; Have only one instance of a database. Multiple instance of a database, implies multiple databases which is not good.
+
 
 
 ====== CREATING A SINGLETON (ie of a class called Database) ======
@@ -28,11 +30,16 @@ class Database private constructor(){
 
     //val instance = Database() <- Can't do this, error, rather, as shown below:
 
-    val instance = Database.getInstance()
+    val instance1 = Database.getInstance()
+    val instance2 = Database.getInstance()
 
-    println("The value of instance is: $instance")
-    //OUTPUT The value of instance is: Database@7ba4f24f, 
-      where Database@7ba4f24f is the memory location of this particular instance
+    println("The value of instance1 is: $instance1")
+    println("The value of instance2 is: $instance2")
+
+    //OUTPUT The value of instance1 is: Database@7ba4f24f
+	     The value of instance2 is also: Database@7ba4f24f 
+
+      where Database@7ba4f24f is the memory location of this particular instance.
 
 
 --- Method 2 (Simpler, shorter method) ---

@@ -1,0 +1,19 @@
+Any variable, function etc that is meant to be static should be enclosed within the companion object block in the class. ie
+
+
+class Calculator(){
+    
+    // 1. Without companion object (non-static)
+    fun sum(a: Int, b:Int): Int {
+        return a+b;
+    }
+
+    // 2.  With companion object (static)
+    companion object {
+    fun sum2(a: Int, b:Int): Int {      // A static method
+            return a+b;
+        }
+
+    var salary:Int = 5000           // A static variable. It is within the companion block as well as the sum2 function
+    }
+}

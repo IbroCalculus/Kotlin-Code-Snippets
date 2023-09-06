@@ -15,12 +15,15 @@ THERE ARE 2 TYPES OF MAP, mapOf( which is immutable), and mutableMapOf( which is
     println(sampleMap.values)
     println(sampleMap.entries)
 
-============= Mutable list ==============
+============== Remove element ==========
+	mapValues.remove(key)
+
+============= Mutable map ==============
     var mapValues2 = mutableMapOf(1 to "a", 2 to "b", 3 to "c", 4 to "d", 5 to "e", 6 to "f")
     mapValues2.put(7,"g")
     mapValues2[8] = "h"
 
-=========  Loopin through a map ==========
+=========  Looping through a map ==========
     mapValues2.forEach { key, value ->  println("KEY $key, VALUE $value") }
 
     for(key in sampleMap.keys){

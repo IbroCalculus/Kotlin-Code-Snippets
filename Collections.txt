@@ -1,0 +1,7 @@
+Collections are a group of objects stored in a single variable. They are similar to arrays, but are different in some ways.
+They are mainly 3 collections, Lists, sets and maps. They are both mutable and Immutable of all 3 types.
+
+CHECK ALSO: Transformations.txt
+CHECK: List.txt, Sets.txt and Maps.txt.
+
+

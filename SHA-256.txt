@@ -1,0 +1,27 @@
+
+
+    print("Enter a plain text: ")
+    val message = readln()
+
+    val digest = generateSHA256Hash(message)
+    println("SHA-256 Digest: $digest")
+
+
+
+private fun generateSHA256Hash(message: String): String {
+    val sb = StringBuilder()
+    try {
+        val md = MessageDigest.getInstance("SHA-256")
+        md.update(message.toByteArray())
+
+        val digest = md.digest()
+
+        for (b in digest) {
+            sb.append(String.format("%02x", b and 0xff.toByte()))
+        }
+
+    } catch (e: NoSuchAlgorithmException) {
+        e.printStackTrace()
+    }
+    return sb.toString()
+}

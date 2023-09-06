@@ -1,8 +1,9 @@
 
-INPUTS ARE BY DEFAULT STRINGS. You may convert from String to e.g Int using; ..readline()!!.toInt()
+INPUTS ARE BY DEFAULT STRINGS. You may convert from String to e.g Int using; ..readline()!!.toInt(), now by simply .readLine().toInt()
+
 
     println("What is your name?:")
-    var input = readLine();
+    var input = readLine();          // readLine().toInt();
     print("You are welcome Mr $input, It is nice to have you amongst us.")
 
 readLine!! -> The input cannot be null

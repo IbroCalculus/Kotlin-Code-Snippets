@@ -1,0 +1,36 @@
+=============== 1. Mapping =========================
+
+    val numbers = setOf(1, 2, 3, 4, 5, 5, 4, 3, 2, 1)
+    println(numbers.map { it * 10 })	//OUTPUT: [10, 20, 30, 40, 50]	
+
+    val numbers = mapOf("Key 1" to 1, "Key 2" to 2, "Key 3" to 3, "Key 4" to 4)
+    println(numbers.mapKeys { it.key.uppercase() })             // Applied to all the keys only. OUTPUT: {KEY 1=1, KEY 2=2, KEY 3=3, KEY 4=4}
+    println(numbers.mapValues { it.value + it.key.length })     // Applied to all the values only. OUTPUT: {Key 1=6, Key 2=7, Key 3=8, Key 4=9}
+
+
+=============== 2. Zipping =========================
+
+    val colors = listOf("red", "brown", "grey")
+    val animals = listOf("fox", "bear", "wolf")
+
+    var zippedValues = colors.zip(animals)
+    var zippedValues2 = animals zip colors
+
+    println(zippedValues)       // OUTPUT: [(red, fox), (brown, bear), (grey, wolf)]
+
+//  To unzip
+
+    val unZippedValues = zippedValues.unzip();
+    println(unZippedValues)     // OUTPUT: ([red, brown, grey], [fox, bear, wolf])
+
+
+=============== 3. Association =========================
+
+    val numbers = listOf("One", "Two", "Three", "Four")
+    println(numbers.associateWith { it.length })    			//OUTPUT: {One=3, Two=3, Three=5, Four=4}
+    println(numbers.associateBy { it.first().uppercase() })		//OUTPUT: {O=One, T=Three, F=Four}
+
+
+
+
+

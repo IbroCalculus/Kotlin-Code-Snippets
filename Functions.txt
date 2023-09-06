@@ -71,18 +71,18 @@ greet()		<- Call the function in main
 fun hello(person:String) {
     println("Hello $person")
 }
+   hello("Ibrahim")
+ //hello(person="Ibrahim")
 
---- Passing an array as a parameter
+--- Passing an array as a parameter ----
 fun arrayvalues(numbers : Array<Int>) {
     for(number in numbers){
         print(number)
     }
 }
 
-   hello("Ibrahim")
- //hello(person="Ibrahim")
 
-----
+
 fun calculate(x:Int, y:Int): Int {
     var answer = x*y
     return answer
@@ -91,6 +91,18 @@ fun calculate(x:Int, y:Int): Int {
 fun calculate(x:Int, y:Int): Int = x*y
 fun calculate(x:Int, y:Int) = x*y
 
+fun summer(a:Int, b:Int): Int{
+    return a + b
+}
+
+fun summer(a:Int, b:Int, c:Int): Int{
+    return a + b + c
+}
+
+fun summer(a:Double, b:Double): Double{
+    return a + b
+}
+
   calculate(2,3)
 //calculate(x=2, y=3)
 
@@ -98,6 +110,10 @@ fun calculate(x:Int, y:Int) = x*y
 
 fun doSomehthing(x: String ="Something Default"){
     print("Good day Mr $x")
+
+fun summer(a:Int=1, b:Int=2, c:Int=3): Int{
+    return a + b + c
+}
 
 
 ========== FUNCTIONS WITH NAMED ARGUMENTS ===================
@@ -130,7 +146,7 @@ fun summer(vararg numbers: Int){
     summer(4,5,6,7,8,9)
 
 
-================ METHOD OVERLOADING ==============
+================ FUNCTION OVERLOADING ==============
 
 fun helloUser(fName:String){
     println("You are welcome $fName")

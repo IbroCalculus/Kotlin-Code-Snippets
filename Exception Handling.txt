@@ -4,10 +4,14 @@
 
     } catch (e:ArithmeticException){  // e.g e: IndexOutOfBoundsException
         println("An Arithmetic exception was encountered, ie $e")
+        e.printStackTrace()
+        println(e.message)
     }
 
      catch (e:Exception){
          println("An exception of type $e occurred")
+        e.printStackTrace()
+        println(e.message)
      }
 
     finally {

@@ -3,16 +3,20 @@ fun main(args: Array<String>) {
 
     var fName : String = "Ibrahim"
     fName = "Musa"
-//  fName = null  -> Compilation error, cannot assign null value
+//  fName = null  -> Will generate error, cannot assign null value
 
-    var sName : String? = "Suleiman"
-    print(sName!!.uppercase())
+
+    var sName : String? = "Suleiman"		// The value of this variable can be null.
+    print(sName!!.uppercase())			// The !!. is compulsory, otherwise ?.   Check below for explanation
     sName = "Ibrahim"
     sName = null
     println("The value of sName is: $sName")  // OUTPUT: ...is: null
 
     var len1 = fName.length
-    var len2 = sName?.length   // It is always null
+    var len2 = sName?.length    // ?. is called the safe call, it is short for: "if(sName != null) {return sName.length} else {return "null"}
+
+    var fName: String? =  null
+    print(fName!!.length)	// !!. It is short for: "if(sName != null) {retun fName.lenght} else {return NullPointerException}
 
     println("The length of fName is $len1")
     println("The lenght of sName is $len2")
