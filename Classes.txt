@@ -128,6 +128,32 @@ class User(var name:String = "John", var lastName:String = "Doe", var age: Int =
 
 
 ---------- CONSTRUCTOR OVERLOADING --------------
+
+ 2 Methods
+
+------  Method 1 (No primary constructor, all are secondary constructor, still good) -------------
+
+class MySecondCar {
+    var name: String? = null
+    var model: Int? = null
+
+//    First constructor
+    constructor()
+
+//    Second constructor
+    constructor(name: String?) {
+        this.name = name
+    }
+
+//    Third constructor
+    constructor(name: String?, model: Int?) {
+        this.name = name
+        this.model = model
+    }
+}
+
+----- Method 2 (Using primary constructor) -------
+
 NB: You may use an initialization block in the main/primary constructor to execute a code once the class's object is initialized.
     But in secondary constructors, you don't need the init block.
     The secondary construtor(s) only take in parameters, not variables, unlike the primary which can take either.
