@@ -1,18 +1,31 @@
 
 CHECK ALSO, String formatting
 
-REMEMBER: var fName is re-assignable, while val fName cannot be re-assigned
+NB: var fName is can be reassigned after initialization, while val fName cannot be re-assigned
+NB: print() vs println()
 
 
 var x = 45
 var y = 2
-    print("The product of $x and $y is equal ${x*y}")
+print("The product of $x and $y is equal ${x*y}")
 
 var fName = "Ibrahim"
 var sName: String = "Suleiman"		//NB: The 'String' is not compulsory
 
 println("You are welcome Mr $fName $sName")
 println(fName.uppercase())
+
+
+------------ String concatenation ------------
+
+    val name = "Ibrahim";
+    val age = 56;
+    val message = "Welcome to this course $name. Your age is given as $age";
+    println(message)
+
+    val firstNum = 50;
+    val secondNum = 56;
+    print("The sum of $firstNum and $secondNum is equal ${firstNum + secondNum}")
 
 
 ------------ Multi-line String --------------

@@ -55,17 +55,7 @@ fun addition(): Int {
     return z
 }
 
-========= FUNCTION WITHOUT PARAMETER ============
-
-fun greet(){
-    println("You are Welcome")
-    print("Mr or Mrs anybody")
-}
-
-greet()		<- Call the function in main
-
-
-========= FUNCTION WITH PARAMETERS ====================
+========= FUNCTION WITH PARAMETERS (Passed either as positional or named parameters) ====================
 
 ----
 fun hello(person:String) {

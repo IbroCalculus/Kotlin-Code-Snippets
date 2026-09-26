@@ -4,6 +4,10 @@
     for(i in someArrays){
         println("The value of this iteration is: $i")
     }
+    
+    for(index in someArrays.indices){
+        println("$index: ${someArrays[index]}")
+    }
 
 ===== For Loop (Looping range) ============
 
